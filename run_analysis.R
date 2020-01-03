@@ -8,30 +8,30 @@ source("mgate.R")
 exp_names <- c("RPMI", "IL3", "Tpo95", "Elt95", "Elt33", "S505N_RPMI", "S505N_IL3", "S505N_Tpo")
 # vector of absolute paths to the combined score files for each experiment, in the order of
 # experiments in exp_names
-combined_score_files <- c("C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedRPMI/tsv/RPMI_exp/main_synonymous_scores.tsv", 
-                          "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedIL3/tsv/IL3_exp/main_synonymous_scores.tsv", 
-                          "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedTpo95/tsv/Tpo95_exp/main_synonymous_scores.tsv", 
-                          "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedElt95/tsv/Elt95_exp/main_synonymous_scores.tsv", 
-                          "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedElt33/tsv/Elt33_exp/main_synonymous_scores.tsv",
-                          "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedS505N_RPMI/tsv/S505N_RPMI_exp/main_synonymous_scores.tsv", 
-                          "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedS505N_IL3/tsv/S505N_IL3_exp/main_synonymous_scores.tsv", 
-                          "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedS505N_Tpo/tsv/S505N_Tpo_exp/main_synonymous_scores.tsv")
-replicate_count_files <- c("C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedRPMI/tsv/RPMI_exp/main_synonymous_counts.tsv", 
-                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedIL3/tsv/IL3_exp/main_synonymous_counts.tsv", 
-                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedTpo95/tsv/Tpo95_exp/main_synonymous_counts.tsv", 
-                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedElt95/tsv/Elt95_exp/main_synonymous_counts.tsv", 
-                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedElt33/tsv/Elt33_exp/main_synonymous_counts.tsv",
-                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedS505N_RPMI/tsv/S505N_RPMI_exp/main_synonymous_counts.tsv", 
-                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedS505N_IL3/tsv/S505N_IL3_exp/main_synonymous_counts.tsv", 
-                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedS505N_Tpo/tsv/S505N_Tpo_exp/main_synonymous_counts.tsv")
-replicate_score_files <- c("C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedRPMI/tsv/RPMI_exp/main_synonymous_scores_shared.tsv", 
-                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedIL3/tsv/IL3_exp/main_synonymous_scores_shared.tsv", 
-                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedTpo95/tsv/Tpo95_exp/main_synonymous_scores_shared.tsv", 
-                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedElt95/tsv/Elt95_exp/main_synonymous_scores_shared.tsv", 
-                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedElt33/tsv/Elt33_exp/main_synonymous_scores_shared.tsv",
-                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedS505N_RPMI/tsv/S505N_RPMI_exp/main_synonymous_scores_shared.tsv", 
-                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedS505N_IL3/tsv/S505N_IL3_exp/main_synonymous_scores_shared.tsv", 
-                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/RenormalisedS505N_Tpo/tsv/S505N_Tpo_exp/main_synonymous_scores_shared.tsv")
+combined_score_files <- c("C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/RPMI/tsv/RPMI_exp/main_synonymous_scores.tsv", 
+                          "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/IL3/tsv/IL3_exp/main_synonymous_scores.tsv", 
+                          "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/Tpo95/tsv/Tpo95_exp/main_synonymous_scores.tsv", 
+                          "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/Elt95/tsv/Elt95_exp/main_synonymous_scores.tsv", 
+                          "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/Elt33/tsv/Elt33_exp/main_synonymous_scores.tsv",
+                          "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/S505N_RPMI/tsv/S505N_RPMI_exp/main_synonymous_scores.tsv", 
+                          "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/S505N_IL3/tsv/S505N_IL3_exp/main_synonymous_scores.tsv", 
+                          "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/S505N_Tpo/tsv/S505N_Tpo_exp/main_synonymous_scores.tsv")
+replicate_count_files <- c("C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/RPMI/tsv/RPMI_exp/main_synonymous_counts.tsv", 
+                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/IL3/tsv/IL3_exp/main_synonymous_counts.tsv", 
+                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/Tpo95/tsv/Tpo95_exp/main_synonymous_counts.tsv", 
+                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/Elt95/tsv/Elt95_exp/main_synonymous_counts.tsv", 
+                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/Elt33/tsv/Elt33_exp/main_synonymous_counts.tsv",
+                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/S505N_RPMI/tsv/S505N_RPMI_exp/main_synonymous_counts.tsv", 
+                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/S505N_IL3/tsv/S505N_IL3_exp/main_synonymous_counts.tsv", 
+                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/S505N_Tpo/tsv/S505N_Tpo_exp/main_synonymous_counts.tsv")
+replicate_score_files <- c("C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/RPMI/tsv/RPMI_exp/main_synonymous_scores_shared.tsv", 
+                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/IL3/tsv/IL3_exp/main_synonymous_scores_shared.tsv", 
+                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/Tpo95/tsv/Tpo95_exp/main_synonymous_scores_shared.tsv", 
+                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/Elt95/tsv/Elt95_exp/main_synonymous_scores_shared.tsv", 
+                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/Elt33/tsv/Elt33_exp/main_synonymous_scores_shared.tsv",
+                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/S505N_RPMI/tsv/S505N_RPMI_exp/main_synonymous_scores_shared.tsv", 
+                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/S505N_IL3/tsv/S505N_IL3_exp/main_synonymous_scores_shared.tsv", 
+                           "C:/Users/andre/Documents/WEHI/TpoR_DMS_Data/Renormalised/S505N_Tpo/tsv/S505N_Tpo_exp/main_synonymous_scores_shared.tsv")
 # selecting a subset of experiments to analyse
 # here: RPMI, Tpo95, Elt95 and Elt33 are selected
 selection <- c(T,F,T,T,T,F,F,F)
@@ -52,60 +52,26 @@ md$pos$`517` <- NULL
 
 
 # Filter
+filter_inactive(md, quant=1)
 
-filter_inactive(md, 1)
+filter_functional(md, range=6)
 
-if (F) {
-  # Use wildtype and terminated mutations as references of the bounds
-  limits <- list()
-  df <- form_data_frame(md, c("experiment", "score", "SE", "//is_wildtype"))
-  for (exp in md$experiments) {
-    exp_t_df <- filter(df, aa=="%", experiment==exp)
-    lower <- quantile(exp_t_df[["score"]], 0.75)
-    upper <- md$wildtype[[exp]]$score + qnorm(0.975) * md$wildtype[[exp]]$SE
-    limits[[exp]] <- c(lower, upper)
-  }
+set_mfilter(md, "filter_functional", 
+  list("RPMI"=c(-Inf, md$mfilter$filter_functional$RPMI[[2]])))
 
+filter_mutation_activated(md)
 
-  # or adjust filter limits by the curvature of violin plots
-  mplot(md, type="filter violin", mfilter="filter_functional", ignore="filter_inactive")
-  mplot(md, type="replicate violin", mfilter="filter_functional", ignore="filter_inactive")
-  
-  limits$Elt33[[2]] <- 0.3
-  limits$Elt95[[2]] <- 0.6
-  limits$RPMI[[2]] <- -0.2
-  limits$Tpo95[[2]] <- 0.4
-  
-  limits$RPMI[[1]] <- -Inf 
-  set_mfilter(md, "filter_functional", limits)
-}
-
-# or filter by the wildtype score
-limits <- list()
-for (exp in md$experiments) {
-  range <- 6
-  limits[[exp]] <- md$wildtype[[exp]]$score + md$wildtype[[exp]]$SE * c(-range, range)
-}
-#limits$RPMI[[2]] <- 0.5 
-limits$RPMI[[1]] <- -Inf 
-set_mfilter(md, "filter_functional", limits)
-
-# filter by previous upper bounds
-for (exp in md$experiments) {
-  limits[[exp]][[1]] <- limits[[exp]][[2]] 
-  limits[[exp]][[2]] <- Inf
-}
-set_mfilter(md, "filter_mutation_activated", limits)
+# Filter mutations over activated by Eltrombopag only
+limits <- md$mfilter$filter_functional
+limits[["Elt95"]][[1]] <- limits[["Elt95"]][[2]]
+limits[["Elt95"]][[2]] <- Inf
+limits[["Elt33"]][[2]] <- Inf
+set_mfilter(md, "filter_elt_active", limits)
 
 
 # Visualise data
-mplot(md, type="terminated")
-mplot(md, type="filter")
-mplot(md, type="filtered")
-mplot(md, type="unfiltered")
-mplot(md, type="violin")
 # Filter inactive 
-mplot(md, type="terminated", mfilter="filter_inactive")
+mplot(md, type="termination", mfilter="filter_inactive")
 mplot(md, type="filter", mfilter="filter_inactive")
 mplot(md, type="near misses", mfilter="filter_inactive")
 mplot(md, type="replicate violation", mfilter="filter_inactive")
@@ -113,8 +79,8 @@ mplot(md, type="filter heatmap", mfilter="filter_inactive")
 mplot(md, type="filtered", mfilter="filter_inactive")
 mplot(md, type="unfiltered", mfilter="filter_inactive")
 
-# Filter active
-mplot(md, type="filter violin", mfilter="filter_functional", ignore="filter_inactive")
+# Filter functional
+mplot(md, type="violin", mfilter="filter_functional", ignore="filter_inactive")
 mplot(md, type="replicate violin", mfilter="filter_functional", ignore="filter_inactive")
 
 mplot(md, type="filter by experiment", mfilter="filter_functional", ignore="filter_inactive")
@@ -131,10 +97,13 @@ mplot(md, type="filtered", mfilter="filter_mutation_activated", ignore=c("filter
 mplot(md, type="unfiltered", mfilter="filter_mutation_activated", ignore=c("filter_inactive", "filter_functional"))
 mplot(md, type="filter heatmap", mfilter="filter_mutation_activated", ignore=c("filter_inactive", "filter_functional"))
 
-# Unfiltered
-mplot(md, type="filter heatmap", mfilter="filter_mutation_activated", ignore=c("filter_mutation_activated", "filter_inactive", "filter_functional"))
-mplot(md, type="filter line", mfilter="filter_mutation_activated", ignore=c("filter_mutation_activated", "filter_inactive", "filter_functional"))
+# Filter elt active
+mplot(md, type="filter", mfilter="filter_elt_active", ignore=c("filter_inactive", "filter_functional", "filter_mutation_activated"))
+mplot(md, type="filter line", mfilter="filter_elt_active", ignore=c("filter_mutation_activated", "filter_inactive", "filter_functional"))
+mplot(md, type="filter heatmap", mfilter="filter_elt_active", ignore=c("filter_inactive", "filter_functional", "filter_mutation_activated"))
 
-mplot(md, type="bar", args=1, mfilter="filter_functional", ignore=c("filter_mutation_activated", "filter_inactive", "filter_functional"))
-c(p, df) %<-% mplot(md, type="all bars", mfilter="filter_functional", ignore=c("filter_mutation_activated", "filter_inactive", "filter_functional"))
+# Unfiltered
+mplot(md, type="filter heatmap", mfilter="filter_elt_active", ignore=c("filter_inactive", "filter_functional", "filter_mutation_activated"))
+#mplot(md, type="bar", args=1, mfilter="filter_functional" , ignore=c("filter_mutation_activated", "filter_inactive", "filter_functional", "filter_elt_active"))
+c(p, df) %<-% mplot(md, type="bar all", mfilter="filter_functional", ignore=c("filter_mutation_activated", "filter_inactive", "filter_functional", "filter_elt_active"))
 ggsave("unfiltered mutations, all bar plots.pdf", p)

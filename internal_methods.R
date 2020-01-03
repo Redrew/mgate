@@ -77,15 +77,19 @@ load_shared_values <- function(md, experiment, data_table, value_names) {
 
 # reads `md` and creates a dataframe with columns for each value
 # Args:
-#     values: a character vector, include
+#     values: a character list, can include
 #         "experiment" 
 #         "replicate"
 #         "score"
 #         "SE"
-#         "mfilter_name"
+#         [mfilter name]
 #         "is_wildtype"
 #         "c_0"
 #         "c_1"
+#         add / before the value names to access values at a higher level in the 
+#         mutation data structure
+#         eg. values=c("experiment", "replicate", "scores", "//scores") will both
+#             have a column for replicate scores and experiment scores
 # By default the data frame will have a "pos", "aa" (amino acid) and "code" (pos+aa) column
 form_data_frame <- function(md, values, ignore=NULL, include_wildtype=F, wildtype=F) {
   derivative_apply <- function(f) {
@@ -195,7 +199,7 @@ plot_scatter <- function(md, df, mfilter=NULL, highlight=NULL) {
   p <- ggplot() + geom_jitter(aes(experiment, y=score, color=df[[highlight]]), df) 
   if (!is.null(mfilter)) {
     filter_limits <- md$mfilter[[mfilter]] %>% data.frame() %>% gather(value=yintercept, key=experiment)
-    p <- p + facet_grid(cols=vars(experiment), scales="free_x") + geom_hline(aes(yintercept=yintercept), filter_limits)
+    p <- p + facet_grid(cols=vars(experiment), scales="free_x", switch="x") + geom_hline(aes(yintercept=yintercept), filter_limits)
   }
   return(p)
 }
@@ -212,7 +216,7 @@ plot_violin <- function(md, df, mfilter=NULL, jitter=T) {
   p <- ggplot() + geom_violin(aes(x=experiment, y=score), df) 
   if (!is.null(mfilter)) {
     filter_limits <- md$mfilter[[mfilter]] %>% data.frame() %>% gather(value=yintercept, key=experiment)
-    p <- p + facet_grid(cols=vars(experiment), scales="free_x") + geom_hline(aes(yintercept=yintercept), filter_limits)
+    p <- p + facet_grid(cols=vars(experiment), scales="free_x", switch="x") + geom_hline(aes(yintercept=yintercept), filter_limits)
   }
   if (jitter) p <- p + geom_jitter(aes(x=experiment, y=score), df, width=0.2)
   return(p)
@@ -228,7 +232,7 @@ plot_bar <- function(md, target_df, target_rep_df, mfilter) {
              pch = 21, position=position_dodge(0.9))
   if (!is.null(mfilter)) {
     filter_limits <- md$mfilter[[mfilter]] %>% data.frame() %>% gather(value=yintercept, key=experiment)
-    p <- p + facet_grid(cols=vars(experiment), scale="free") + geom_hline(aes(yintercept=yintercept), filter_limits)
+    p <- p + facet_grid(cols=vars(experiment), scale="free_x", switch="x") + geom_hline(aes(yintercept=yintercept), filter_limits)
   }
   
   return(p)
@@ -241,7 +245,7 @@ plot_heatmap <- function(df, mfilter) {
   p <- ggplot(df, mapping=aes(x=aa, y=pos)) + 
     geom_tile(aes(fill=df[[mfilter]]), colour="black") +
     geom_point(data=filter(df, is_wildtype==1), colour="gray10") +
-    facet_grid(cols=vars(property), scales="free", space="free_x")
+    facet_grid(cols=vars(property), scales="free", space="free_x", switch="x")
   return(p)
 }
 
